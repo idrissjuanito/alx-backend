@@ -38,4 +38,6 @@ class Server:
         data = self.dataset()
         if indexes[0] > len(data):
             return []
+        if indexes[1] > len(data):
+            return data[indexes[0]:]
         return data[indexes[0]:indexes[1]]
