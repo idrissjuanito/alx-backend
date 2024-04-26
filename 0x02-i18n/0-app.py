@@ -1,13 +1,23 @@
 #!/usr/bin/env python3
 """ Flask App module """
 from flask import Flask, render_template
+from flask_babel import Babel
 app = Flask(__name__)
+babel = Babel(app)
+app.config.from_object('Config')
 
 
 @app.route('/')
 def index():
     """ Root endpoint handler """
     return render_template('0-index.html')
+
+
+class Config():
+    LANGUAGES = ["en", "fr"]
+    BABEL_DEFAULT_LOCALE = 'en'
+    BABEL_DEFAULT_TIMEZONE = 'UTC'
+
 
 
 if __name__ == "__main__":
