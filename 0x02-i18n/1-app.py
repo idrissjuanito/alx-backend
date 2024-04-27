@@ -14,6 +14,7 @@ def index():
 
 
 class Config():
+    """ class for app configuration """
     LANGUAGES = ["en", "fr"]
     BABEL_DEFAULT_LOCALE = 'en'
     BABEL_DEFAULT_TIMEZONE = 'UTC'
